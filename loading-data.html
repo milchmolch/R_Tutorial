@@ -604,7 +604,7 @@ integer vector with the <code>which</code> function. It tells you the indices of
      
     
 <p>Subsetting can be useful when you want to look at bits of your
-data.  For example, all the rows where the Height is at least 10
+data.  For example, all the rows where the Height is more than 10
 and there was no seed herbivore:</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -1122,10 +1122,13 @@ plot(data.1stem$Height, data.1stem$Weight)
     
 <p>2.</p>
 <p>   <code>
-nrow(subset(data, Seed.herbivore=="TRUE" & Root.herbivore=="FALSE"))
-<br>[1] 28 <br>
+nrow(subset(data, Seed.herbivore=="TRUE" & Root.herbivore=="FALSE"))<br>
+[1] 28 <br>
+    ...for all possible combinations<br><br>
 Alternatively:<br>
-table(data$Root.herbivore,data$Seed.herbivore)
+table(data$Root.herbivore,data$Seed.herbivore)<br>
+    or graphically:<br>
+mosaicplot(data$Root.herbivore ~ data$Seed.herbivore)
     </code></p>    
     
 <p>3.</p>
