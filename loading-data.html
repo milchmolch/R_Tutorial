@@ -1107,7 +1107,7 @@ simplify things.  But be careful.</p>
     <li>Make a subset of the data only for plants with 1 stem (column No.stems). Plot Height vs. Weight for the subset.</li>
     <li>Count how many plants have seed and root herbivores using the <code>table</code> function (columns Seed.herbivore and Root.herbivore ). Try to find out whether plants with seed herbivores tend to have also root herbivores.</li>
     <li>Make a boxplot to examine whether Root.Herbivores have an effect on Height. Use the function <code>boxplot</code>.</li>
-    <li>Is the difference stastistically significant? Test it using the <code>t.test</code> function.</li>
+    <li>Is the difference statistically significant? Test it using the <code>t.test</code> function.</li>
 </ol>    
     
 
@@ -1122,11 +1122,11 @@ plot(data.1stem$Height, data.1stem$Weight)
     
 <p>2.</p>
 <p>   <code>
-nrow(subset(data, Seed.herbivore=="TRUE" & Root.herbivore=="FALSE"))<br>
+table(data$Root.herbivore, data$Seed.herbivore)<br><br>
+Alternatively:<br>   
+nrow(subset(data, Seed.herbivore == TRUE & Root.herbivore == FALSE))<br>
 [1] 28 <br>
     ...for all possible combinations<br><br>
-Alternatively:<br>
-table(data$Root.herbivore,data$Seed.herbivore)<br>
     or graphically:<br>
 mosaicplot(data$Root.herbivore ~ data$Seed.herbivore)
     </code></p>    
