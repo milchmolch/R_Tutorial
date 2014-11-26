@@ -88,7 +88,7 @@ are given.
 It contains 5 variables: year, name, soundex, sex and proportion
 
 Download bnames2.csv.bz2 from http://stat405.had.co.nz/data/bnames2.csv.bz2
-(Under Windows download the zipped file [bnames2.csv.zip](bnames2.csv.zip) and extract it before reading)
+(Under Windows download the zipped file [bnames2.csv.zip](https://www.dropbox.com/s/hax6jullt8a9kd7/bnames2.csv.zip?dl=0) and extract it before reading)
 
 You can directly read in the compressed file like (on Linux and Mac OS)
 
