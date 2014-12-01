@@ -1,4 +1,12 @@
 
+```r
+# Set eval=TRUE to hide all results and figures.
+# This sets defaults. Can change this manually in individual chunks.
+# Must load knitr so opts_chunk is in search path.
+library(knitr)
+#opts_chunk$set(results="hide", fig.show="hide", fig.keep="none", fig.path='Figs/', fig.width=12, fig.height=8)
+opts_chunk$set(fig.width=12, fig.height=8, warning=FALSE, message=FALSE)
+```
 
 # Programming Exercises
 
@@ -101,10 +109,6 @@ qplot(data=msleep, log(bodywt), log(sleep_total))
 qplot(data=msleep, log(brainwt), log(sleep_total))
 ```
 
-```
-## Warning: Removed 27 rows containing missing values (geom_point).
-```
-
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-2.png) 
 
 ```r
@@ -117,11 +121,6 @@ with(msleep, cor(log(bodywt), log(sleep_total), method = "spearman"))
 
 ```r
 with(msleep, cor.test(log(bodywt), log(sleep_total), method = "spearman"))
-```
-
-```
-## Warning in cor.test.default(log(bodywt), log(sleep_total), method =
-## "spearman"): Cannot compute exact p-value with ties
 ```
 
 ```
@@ -142,10 +141,6 @@ with(msleep, cor.test(log(bodywt), log(sleep_total), method = "spearman"))
 qplot(data=msleep, sleep_total, sleep_rem)
 ```
 
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
-```
-
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 ### 4. Make point size proportional to log(body mass)
@@ -154,24 +149,12 @@ qplot(data=msleep, sleep_total, sleep_rem)
 qplot(data=msleep, sleep_total, sleep_rem, size=log(bodywt))
 ```
 
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
-```
-
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 ### 5. Add a OLS (Ordinary least square) regression line
 
 ```r
 qplot(data=msleep, sleep_total, sleep_rem, size=log(bodywt)) + stat_smooth(method = 'lm')
-```
-
-```
-## Warning: Removed 22 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
 ```
 
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
@@ -193,46 +176,18 @@ table(msleep$vore)
 qplot(data=msleep, sleep_total, sleep_rem, size=log(bodywt), col=vore) + stat_smooth(se=FALSE, method='lm')
 ```
 
-```
-## Warning: Removed 9 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 8 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 1 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 2 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 2 rows containing missing values (stat_smooth).
-```
-
-```
-## Warning: Removed 22 rows containing missing values (geom_point).
-```
-
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
-### (advanced) 7. Make the figure from the question 6 in publication quality (Axes labels, font sizes, ..)
+### 7. (advanced) Make the figure from the question 6 in publication quality (Axes labels, font sizes, ..)
 
 ```r
-#using colors from the RColorBrewer library
-qplot(data=msleep, sleep_total, sleep_rem, col=vore, size=3, shape=vore) + xlab("Total amount of sleep (hrs/day)") + ylab("REM sleep (hrs/day)") + theme_classic(base_size = 14, base_family = "Helvetica") + scale_shape(name = "Functional\nfeeding group", labels = c("carnivore","herbivore","insectivore","omnivore")) + guides(size = FALSE, col = FALSE) + scale_colour_brewer(palette="Set1")
-```
-
-```
-## Warning: Removed 27 rows containing missing values (geom_point).
+#using Set1 colors from the RColorBrewer library
+qplot(data=msleep, sleep_total, sleep_rem, col=vore, size=3, shape=vore) + xlab("Total amount of sleep (hrs/day)") + ylab("REM sleep (hrs/day)") + theme_classic(base_size = 14, base_family = "Helvetica") + scale_shape(name = "Functional\nfeeding group", labels = c("carnivore","herbivore","insectivore","omnivore")) + guides(size = FALSE, col = FALSE) + scale_colour_brewer(palette="Set1") + theme(axis.title.x = element_text(face="bold"), axis.title.y = element_text(face="bold"), legend.key = element_blank()) 
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
-The graph is still not perfect, e.g. as the legend is small and not colored. But often it is faster and more convenient to do make small changes manually using graphics software. Here I would save the plot as svg and make the last improvements using Inkscape (or Illustrator on svg or pdf).
+The graph is still not perfect, e.g. as the legend is too small and not colored. But often it is faster and more convenient to make small changes manually using graphics software. Here I would save the plot as svg/pdf and make the last improvements using Inkscape (or Illustrator).
 
 
 Original publication in [PNAS](http://www.pnas.org/content/104/3/1051.abstract)
@@ -426,7 +381,7 @@ are given.
 It contains 5 variables: year, name, soundex, sex and proportion
 
 Download bnames2.csv.bz2 from http://stat405.had.co.nz/data/bnames2.csv.bz2
-(Under Windows download the zipped file [bnames2.csv.zip](bnames2.csv.zip) and extract it before reading)
+(Under Windows download the zipped file [bnames2.csv.zip](https://www.dropbox.com/s/hax6jullt8a9kd7/bnames2.csv.zip?dl=0) and extract it before reading)
 
 You can directly read in the compressed file like (on Linux and Mac OS)
 
@@ -438,14 +393,6 @@ Also load a file containing the total number of birth per years (for boys and gi
 
 ```r
 births <- read.csv("http://stat405.had.co.nz/data/births.csv")
-```
-
-```
-## Warning in file(file, "rt"): kann 'stat405.had.co.nz' nicht auflösen
-```
-
-```
-## Error in file(file, "rt"): kann Verbindung nicht öffnen
 ```
 
 
@@ -473,12 +420,14 @@ Plotting the frequency of Stefan from 1880 to 2008.
 
 ```r
 bnames.Stefan <- subset(bnames, name=="Stefan")
+#using plot
 plot(bnames.Stefan$year, bnames.Stefan$prop, type="l")
 ```
 
 ![plot of chunk unnamed-chunk-24](figure/unnamed-chunk-24-1.png) 
 
 ```r
+#or using qplot
 qplot(bnames.Stefan$year, bnames.Stefan$prop, geom="line")
 ```
 
@@ -537,7 +486,7 @@ qplot(year, prop, color=name, data=subset(bnames, name %in% c("Steven","Stefan",
 
 ![plot of chunk unnamed-chunk-27](figure/unnamed-chunk-27-1.png) 
 
-### (advanced) 4. Which boy and girl name was used most over the whole time? 
+### 4. (advanced) Which boy and girl name was used most over the whole time? 
 
 We need to sum up the absolute births over the years. First we add a variable AbsBirths
 
@@ -547,13 +496,6 @@ for (i in 1:nrow(bnames)) {
   totalNumber <- subset(births, year == bnames$year[i] & sex == bnames$sex[i])$births
   AbsNumber[i] <- round(bnames$prop[i] * totalNumber)
 }
-```
-
-```
-## Error in subset(births, year == bnames$year[i] & sex == bnames$sex[i]): Objekt 'births' nicht gefunden
-```
-
-```r
 bnames$AbsBirths <- AbsNumber
 ```
 
@@ -566,7 +508,7 @@ head(counts)
 
 ```
 ##   Aaden Aaliyah   Aarav   Aaron      Ab Abagail 
-##       0       0       0       0       0       0
+##     959   39665     219  509464      25    2682
 ```
 
 ```r
@@ -574,8 +516,8 @@ head(sort(decreasing = TRUE, counts))
 ```
 
 ```
-##   Aaden Aaliyah   Aarav   Aaron      Ab Abagail 
-##       0       0       0       0       0       0
+##   James    John  Robert Michael    Mary William 
+## 5043259 5036828 4771447 4226596 4111514 3966170
 ```
 
 Alternatively we could use the ddply() function:
@@ -593,7 +535,7 @@ counts["Stefan"]
 
 ```
 ## Stefan 
-##      0
+##  16180
 ```
 
 ```r
@@ -601,56 +543,53 @@ sum(subset(bnames, name == "Stefan")$AbsBirths)
 ```
 
 ```
-## [1] 0
+## [1] 16180
 ```
 
-### (advanced) 5. Did first names became shorter over time? 
-bnames$length <- nchar(bnames$name)
+### 5. (advanced) Did first names became shorter over time? 
+
+```r
+bnames$length <- nchar(as.character(bnames$name))
 bnames.1880ies <- subset(bnames, year >= 1880 & year < 1890)
 sum.1880 <- sum(tapply(bnames.1880ies$AbsBirths, bnames.1880ies$length, sum))
 tapply(bnames.1880ies$AbsBirths, bnames.1880ies$length, sum)/sum.1880*100
+```
+
+```
+##           2           3           4           5           6           7 
+##  0.14437353  5.26493274 21.41203578 25.25700995 27.00486984 12.78526830 
+##           8           9          10          11 
+##  4.67586367  3.25381577  0.16606090  0.03576953
+```
+
+```r
 bnames.1990ies <- subset(bnames, year >= 1990 & year < 2000)
 sum.1990 <- sum(tapply(bnames.1990ies$AbsBirths, bnames.1990ies$length, sum))
 tapply(bnames.1990ies$AbsBirths, bnames.1990ies$length, sum)/sum.1990*100
+```
 
-Calculating it for all years is a bit more tricky as we need a weighted eman and can't use tapply. Either we do it with a for loop or we can use the `ddply()` function from the `plyr` package. See also this [Stackoverflow post](http://stackoverflow.com/questions/18392408/how-to-use-ddply-to-get-weighted-mean-of-class-in-dataframe)
+```
+##           2           3           4           5           6           7 
+##  0.03516489  1.09903596 11.12727404 22.25646220 27.59255218 22.52092668 
+##           8           9          10          11 
+##  8.91371073  4.95157188  0.38593984  1.11736159
+```
+
+Calculating it for all years is a bit more tricky as we need a weighted mean and can't use tapply for that purpose. Either we do it with a for loop or we can use the `ddply()` function from the `plyr` package. See also this [Stackoverflow post](http://stackoverflow.com/questions/18392408/how-to-use-ddply-to-get-weighted-mean-of-class-in-dataframe)
 
 
 ```r
 bnames.girls <- subset(bnames, sex=="girl")[, c(1,6,7)]
-```
-
-```
-## Error in `[.data.frame`(subset(bnames, sex == "girl"), , c(1, 6, 7)): undefined columns selected
-```
-
-```r
 plot(ddply(bnames.girls, .(year), summarize, x = weighted.mean(length, AbsBirths)), type='l', ylab="Mean Length")
-```
-
-```
-## Error in empty(.data): Objekt 'bnames.girls' nicht gefunden
-```
-
-```r
 bnames.boys <- subset(bnames, sex=="boy")[, c(1,6,7)]
-```
-
-```
-## Error in `[.data.frame`(subset(bnames, sex == "boy"), , c(1, 6, 7)): undefined columns selected
-```
-
-```r
 lines(col="red", ddply(bnames.boys, .(year), summarize, x = weighted.mean(length, AbsBirths)))
 ```
 
-```
-## Error in empty(.data): Objekt 'bnames.boys' nicht gefunden
-```
+![plot of chunk unnamed-chunk-33](figure/unnamed-chunk-33-1.png) 
 
 First names have become longer in the US over time. Interestingly, girls' names (in black) are more variable in length than boys' names (in red). 
 
-### (advanced) 6. Which names became very rare after 1944? 
+### 6. (advanced) Which names became very rare after 1944? 
 
 
 ```r
@@ -670,13 +609,13 @@ head(bnames.counts[order(decreasing = FALSE, bnames.counts$RankProd), 1:3])
 ```
 
 ```
-##    Row.names counts.before1944 counts.from1944
-## 4      Aaron                 0               0
-## 9      Abbie                 0               0
-## 12      Abby                 0               0
-## 16       Abe                 0               0
-## 17      Abel                 0               0
-## 20   Abigail                 0               0
+##      Row.names counts.before1944 counts.from1944
+## 490       Arlo              2104              43
+## 2354    Farris               676              43
+## 4579   Marshal               366              43
+## 2789   Haskell              2541              44
+## 4180 Llewellyn              1470              46
+## 1963    Earlie               896              46
 ```
 
 ```r
@@ -685,16 +624,16 @@ head(bnames.counts[order(decreasing = TRUE, bnames.counts$RankProd), 1:3])
 ```
 
 ```
-##    Row.names counts.before1944 counts.from1944
-## 4      Aaron                 0               0
-## 9      Abbie                 0               0
-## 12      Abby                 0               0
-## 16       Abe                 0               0
-## 17      Abel                 0               0
-## 20   Abigail                 0               0
+##      Row.names counts.before1944 counts.from1944
+## 5664      Ryan                10          850573
+## 2216      Erin                 9          307579
+## 1189     Chase                 5          108247
+## 1808     Diego                 5           69650
+## 1353      Cody                24          266989
+## 6385     Tyler                38          532129
 ```
 
-### (advanced) 7. Think of another question you could answer with the dataset. E.g. Identify the most popular firstname in 1980ies the or identify the most popular name that was used for boys and girls.
+### 7. (advanced) Think of another question you could answer with the dataset. E.g. Identify the most popular firstname in 1980ies the or identify the most popular name that was used for boys and girls.
 
 
 ***
