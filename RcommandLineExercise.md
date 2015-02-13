@@ -57,26 +57,7 @@ Then run `print-args.R` from the shell:
 Rscript print-args.R first second third
 ```
 
-
-```r
-args <- commandArgs()
-cat(args, sep = "\n")
-```
-
-```
-## /Library/Frameworks/R.framework/Resources/bin/exec/R
-## --slave
-## -e
-## rmarkdown::render('RcommandLineExercise.Rmd',~+~~+~encoding~+~=~+~'');
-```
-
 commandArgs() adds each of those arguments to the vector it returns. Since the first elements of the vector are always the same, we can tell commandArgs to only return the arguments that come after `--args`. Let's update `print-args.R` and save it as `print-args-trailing.R`:
-
-
-```r
-args <- commandArgs(trailingOnly = TRUE)
-cat(args, sep = "\n")
-```
 
 And then run print-args-trailing from the shell:
 ```
@@ -132,8 +113,42 @@ Rscript readings.R inflammation-01.csv
 ### Handling Command-Line Flags
 
 We would like a program which can calculates different options of summary statistics.
-`--min`, `--mean`, or --max flag to determine what statistic to print.
+`--min`, `--mean`, or --max flag to determine what statistic to print. Save the following code as `readings-2.R`.
 
+
+```r
+main <- function() {
+  args <- commandArgs(trailingOnly = TRUE)
+  action <- args[1]
+  filenames <- args[-1]
+  stopifnot(action %in% c("--min", "--mean", "--max"))
+  
+  for (f in filenames) {
+    process(f, action)
+  }
+}
+
+process <- function(filename, action) {
+  dat <- read.csv(file = filename, header = FALSE)
+  
+  if (action == "--min") {
+    values <- apply(dat, 1, min)
+  } else if (action == "--mean") {
+    values <- apply(dat, 1, mean)
+  } else if (action == "--max") {
+    values <- apply(dat, 1, max)
+  }
+  cat(values, sep = "\n")
+}
+
+main()
+```
+
+Run it from the shell by
+
+```
+Rscript readings-2.R --max inflammation-01.csv
+```
 
 ### Key Points
 
