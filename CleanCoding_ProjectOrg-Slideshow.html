@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Stefan Wyder" />
+  <title>URPP Tutorial on R</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">URPP Tutorial on R</h1>
+  <p class="author">
+Stefan Wyder
+  </p>
+  <p class="date"><img src="Logo_URPP_Kreisganz_kl2.png" /></p>
+</div>
+<div class="slide section level1">
+
+<h4 id="clean-coding-project-organization">Clean Coding &amp; Project Organization</h4>
+<h4 id="running-r-from-command-line">Running R from Command Line</h4>
+</div>
+<div id="clean-coding" class="slide section level1">
+<h1>Clean coding</h1>
+<h2 id="the-main-goal-is-readability">The main goal is <strong>readability</strong></h2>
+<pre><code>&quot;You&#39;re always working on a project with at least 1 other collaborator,
+and that is future you&quot; Hadley Wickham</code></pre>
+<p><br /><br />Anyone should be able to pick up the code and understand what is does.</p>
+<p><br />Use</p>
+<ul class="incremental">
+<li>descriptive names<br /></li>
+<li>consistent style (indentation, names)<br /></li>
+<li>functions (single operation, single function)<br /></li>
+<li>tell us what the function is doing, not how</li>
+</ul>
+</div>
+<div id="be-consistent" class="slide section level1">
+<h1>Be consistent</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"><em>Style 1</em></th>
+<th align="left"><em>Style 2</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Variables</strong></td>
+<td align="left"></td>
+<td align="left">avgExpr</td>
+<td align="left">avg_Expr</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Functions</strong></td>
+<td align="left"></td>
+<td align="left">CalculateAvgExpr()</td>
+<td align="left">Calculate_Avg_Expr()</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Constants</strong></td>
+<td align="left"></td>
+<td align="left">kConstantName</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br /> <br />see e.g. <a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google Stylesheet</a></p>
+</div>
+<div id="use-functions" class="slide section level1">
+<h1>Use functions</h1>
+<p>Break down the problem into functions<br /><br /><br />One operation, one function</p>
+</div>
+<div id="comments" class="slide section level1">
+<h1>Comments</h1>
+<pre><code>&quot;Write code that is so clear that you don&#39;t need to comment it, and then
+comment it anyway.&quot; Tracy Teal</code></pre>
+<ul>
+<li>Write things that will make your life easier when you come back to a project:</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">describe your intent</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">reasons for approaches</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">sources of data / code / algorithm</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Avoid writing comments that just repeat what the code says</li>
+</ul>
+</div>
+<div id="some-best-practises" class="slide section level1">
+<h1>Some best practises</h1>
+<p>Different styles are possible. These are just some suggestions (learned the hard way)</p>
+</div>
+<div id="keep-all-your-source-files-for-a-project-in-the-same-directory." class="slide section level1">
+<h1>Keep all your source files for a project in the same directory.</h1>
+<h2 id="then-use-relative-paths.">Then use relative paths.</h2>
+<pre><code>df &lt;- read.table(&quot;files/data.csv&quot;, header = TRUE)</code></pre>
+<p>rather than</p>
+<pre><code>df &lt;- read.table(&quot;/home/wyder/PROJECTS/coexpression/files/data.csv&quot;, header = TRUE)</code></pre>
+</div>
+<div id="more-tips" class="slide section level1">
+<h1>More tips</h1>
+<ul class="incremental">
+<li>Run R inside of the project folder<br /></li>
+<li>Avoid setwd() in a script. Never use setwd() once the script is running. If you use it put it at the very beginning.<br /></li>
+<li>Don't save a session on exit. Prevent unexpected results and start with a clean enviroment<br /></li>
+<li>Store the versions of R/packages you used with sessionInfo()<br /></li>
+<li>Write down project goals (README file)<br /></li>
+<li>Use a versioning system (e.g. git)</li>
+</ul>
+</div>
+<div id="for-larger-projects-separate-your-scripts" class="slide section level1">
+<h1>For larger projects separate your scripts</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">load.R</td>
+<td align="left"></td>
+<td align="left">load raw data</td>
+</tr>
+<tr class="even">
+<td align="left">clean.R</td>
+<td align="left"></td>
+<td align="left">reformat and transform data, clean outliers, handles missing values</td>
+</tr>
+<tr class="odd">
+<td align="left">functions.R</td>
+<td align="left"></td>
+<td align="left">keep all functions in a separate file</td>
+</tr>
+<tr class="even">
+<td align="left">do.R</td>
+<td align="left"></td>
+<td align="left">your actual analysis: loads, cleans data and does analysis</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="bioconductor" class="slide section level1">
+<h1>Bioconductor</h1>
+<p>www.bioconductor.org</p>
+<p>Tools for the statistical analysis and comprehension of genomic data in the R programming language.<br />Also data integration.</p>
+<ul>
+<li>Sequence Analysis<br /></li>
+<li>RNA-seq<br /></li>
+<li>Oligonucleotide Arrays<br /></li>
+<li>Variants<br /></li>
+<li>Annotation (Gene, Pathway, GO, …)<br /></li>
+<li>Mass spectrometry and proteomics<br /></li>
+<li>…</li>
+</ul>
+</div>
+<div id="sources" class="slide section level1">
+<h1>Sources</h1>
+<p><a href="https://github.com/swcarpentry/bc">Software Carpentry</a></p>
+</div>
+</body>
+</html>
