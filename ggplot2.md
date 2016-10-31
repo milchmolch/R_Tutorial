@@ -264,7 +264,7 @@ There are endless ways to combine aesthetic mappings with different geoms and mu
 
 ## Further **ggplot2** resources
 
-* [Cheat Sheet](http://www.rstudio.com/resources/cheatsheets/)*
+* [Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)
 * <http://docs.ggplot2.org/current/>: The official **ggplot2** documentation.
 * <http://www.amazon.com/o/ASIN/0387981403/ref=nosim/gettgenedone-20>: The **ggplot2** book, by the developer, Hadley Wickham.
 * <https://groups.google.com/forum/#!forum/ggplot2>: The **ggplot2** Google Group (mailing list, discussion forum).
