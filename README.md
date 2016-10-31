@@ -1,4 +1,4 @@
-R_Tutorial
+Introduction to R Tutorial
 ==========
 
 # [URPP Tutorial on R](http://milchmolch.github.io/R_Tutorial/)
@@ -9,7 +9,7 @@ R_Tutorial
 **Cheatsheets**  
 -  [Basic R](https://www.rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf)  
 -  [RStudio IDE](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
--  [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)  
+-  [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)  
 -  [Other cheatsheets](https://www.rstudio.com/resources/cheatsheets/)  
 
 **Getting help**
