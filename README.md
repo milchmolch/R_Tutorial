@@ -2,9 +2,6 @@ URPP Evolution
 # [Introduction to R Tutorial](http://milchmolch.github.io/R_Tutorial/)
 ==========
 
-
-
-
 ### Interesting Links
    
 **Cheatsheets**  
