@@ -14,10 +14,10 @@ debugging, visualization and workspace management. Importantly, it helps us docu
 
 <img src="Rstudio_explained.png" width="600">
 
-- Editor: write R scripts
-- Console: interactively type R commands and see output
+- Code editor: write R scripts
+- R Console: interactively type R commands and see output
 - Workspace: view objects / searchable command history
-- Plot pane / R package manager / Integrated R help
+- Plot pane / files / R package manager / Integrated R help
 - Organize your scripts as projects (File | New Project...)
 
 ### Work with projects
