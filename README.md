@@ -9,6 +9,7 @@ R_Tutorial
 **Cheatsheets**  
 -  [Basic R](https://www.rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf)  
 -  [RStudio IDE](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
+-  [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)  
 -  [Other cheatsheets](https://www.rstudio.com/resources/cheatsheets/)  
 
 **Getting help**
@@ -25,6 +26,10 @@ R_Tutorial
 - [**Software Carpentry**](http://software-carpentry.org/lessons/) lessons  
     [Programming with R](http://swcarpentry.github.io/r-novice-inflammation/)  
     [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+
+**Plotting using ggplot2**  
+- [Official documentation](http://ggplot2.org/)  
+- [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)
 
 **Misc**  
 - [Cookbook for R](http://www.cookbook-r.com/)
