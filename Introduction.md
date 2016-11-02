@@ -28,6 +28,10 @@ debugging, visualization and workspace management. Importantly, it helps us docu
 - Under the `Files` tab on the right of the screen, click on `New Folder` and create a folder named `data` within your newly created working directory. (e.g. `~/R_course/data)
 - Create a new R script (File > New File > R script) and save it in your working directory (e.g. `R-course-script.R`)
 
+### Download data set
+
+We’re going to spend a bit of time using a data set. You can download this from [here](http://nicercode.github.io/intro/data/seed_root_herbivores.csv) (http://nicercode.github.io/intro/data/seed_root_herbivores.csv) and put it into the `data` directory. Download this file, open the `R_course/data` folder and move it there (if you click More: show folder in new window, you’ll get a file browser window opening in about the right place). Similarly, also grab [this file](http://nicercode.github.io/intro/data/seed_root_herbivores.txt) (http://nicercode.github.io/intro/data/seed_root_herbivores.txt) and put it in the `data` directory too.
+
 
 ### Why R?
 
