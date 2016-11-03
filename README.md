@@ -1,6 +1,6 @@
 URPP Evolution
 # [Introduction to R Tutorial](http://milchmolch.github.io/R_Tutorial/)
-# [Data Carpentry R lesson](http://www.datacarpentry.org/R-genomics/)
+# [R lesson (Data Carpentry)](http://www.datacarpentry.org/R-genomics/)
 ==========
 
 ### Interesting Links
