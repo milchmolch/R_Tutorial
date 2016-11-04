@@ -1,6 +1,6 @@
 URPP Evolution
-# [Introduction to R Tutorial](http://milchmolch.github.io/R_Tutorial/)
-# [R lesson (Data Carpentry)](http://www.datacarpentry.org/R-genomics/)
+# [Introduction to R Tutorial (4 hrs)](http://milchmolch.github.io/R_Tutorial/)
+# [R lesson (Data Carpentry) (2-3 hrs)](http://www.datacarpentry.org/R-genomics/)
 ==========
 
 ### Interesting Links
@@ -31,7 +31,9 @@ URPP Evolution
 **Plotting using ggplot2**  
 - [Official documentation](http://ggplot2.org/)  
 - [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)  
-- [Publication-quality graphs](http://egret.psychol.cam.ac.uk/statistics/R/graphs2.html)
+- [Publication-quality graphs](http://egret.psychol.cam.ac.uk/statistics/R/graphs2.html)  
+- [A more detailed lesson](https://github.com/swcarpentry/DEPRECATED-bc/blob/master/intermediate/r/data-visualization/ggplot.pdf)  
+- [Themes for ggplot2](https://github.com/jrnold/ggthemes) - different overall looks for ggplot2
 
 **Misc**  
 - [Cookbook for R](http://www.cookbook-r.com/)
