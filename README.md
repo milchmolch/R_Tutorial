@@ -1,6 +1,9 @@
 URPP Evolution
+# Part 1
 # [Introduction to R Tutorial (4 hrs)](http://milchmolch.github.io/R_Tutorial/)
 # [R lesson (Data Carpentry) (2-3 hrs)](http://www.datacarpentry.org/R-genomics/)
+
+## [pdf Summary](URPP_Tutorial_R_Summary1.pdf)
 ==========
 
 ### Interesting Links
@@ -16,7 +19,8 @@ URPP Evolution
 - https://www.rdocumentation.org/
 
 **Books**  
-- [R Programming for Data Science](https://leanpub.com/rprogramming)
+- [R Programming for Data Science](https://leanpub.com/rprogramming)  
+- [R for Data Science](http://r4ds.had.co.nz/) by Hadley Wickham
 
 **Similar courses**  
 - [Try R](http://tryr.codeschool.com/) - interactive code school
@@ -28,16 +32,18 @@ URPP Evolution
     [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
 - [R Tutorial](http://www.cyclismo.org/tutorial/R/)
 
-**Plotting using ggplot2**  
-- [Official documentation](http://ggplot2.org/)  
+**Plotting using ggplot2**
+- [R graph gallery](http://www.r-graph-gallery.com/)  
+- [Official ggplot2 documentation](http://ggplot2.org/)  
+- [Cookbook](http://www.cookbook-r.com/Graphs/)  
 - [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf)  
 - [Publication-quality graphs](http://egret.psychol.cam.ac.uk/statistics/R/graphs2.html)  
 - [A more detailed lesson](https://github.com/swcarpentry/DEPRECATED-bc/blob/master/intermediate/r/data-visualization/ggplot.pdf)  
 - [Themes for ggplot2](https://github.com/jrnold/ggthemes) - different overall looks for ggplot2
 
 **Misc**  
-- [Cookbook for R](http://www.cookbook-r.com/)
-- [R graph gallery](http://www.r-graph-gallery.com/)
+- [Cookbook for R](http://www.cookbook-r.com/)  
+- [Quick-R](http://www.statmethods.net/)  
 - [R programming for those coming from other languages](http://www.johndcook.com/R_language_for_programmers.html)
 
 **Video courses**  
@@ -45,7 +51,7 @@ URPP Evolution
 - [Intro to R - Google developers](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK9qQfztXeybpHvru-TrqAP)
 
 **Learning more**  
-- [Learning link collection](https://www.rstudio.com/online-learning/#R)
+- [Link collection](https://www.rstudio.com/online-learning/#R)
 - Exploratory Data Analysis with R: [book](https://leanpub.com/exdata) and [videos](https://www.youtube.com/watch?v=6lOvA_y7p7w&list=PLjTlxb-wKvXPhZ7tQwlROtFjorSj9tUyZ)  
 - [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
  
