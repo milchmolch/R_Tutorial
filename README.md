@@ -1,6 +1,6 @@
 URPP Evolution
 # Part 1
-# [Introduction to R Tutorial (4 hrs)](http://mimolch.github.io/R_Tutorial/)
+# [Introduction to R Tutorial (4 hrs)](http://swyder.github.io/R_Tutorial/)
 # [R lesson (Data Carpentry) (2-3 hrs)](http://www.datacarpentry.org/R-genomics/)
 
 ## [pdf Summary](URPP_Tutorial_R_Summary1.pdf)
