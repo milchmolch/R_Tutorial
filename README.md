@@ -1,12 +1,34 @@
-URPP Evolution
-# Part 1
-# [Introduction to R Tutorial (4 hrs)](http://swyder.github.io/R_Tutorial/)
-# [R lesson (Data Carpentry) (2-3 hrs)](http://www.datacarpentry.org/R-genomics/)
+### University of Zurich
+### URPP Evolution in Action
+![URPP logo](Logo_URPP_kl2.png)
 
-## [pdf Summary](URPP_Tutorial_R_Summary1.pdf)
-==========
+Stefan Wyder & Heidi Tschanz-Lischer
 
-### Interesting Links
+stefan.wyder@uzh.ch  
+heidi.lischer@ieu.uzh.ch
+
+
+## Introduction to R 
+  
+
+morning:  
+[http://swyder.github.io/R_Tutorial/](http://swyder.github.io/R_Tutorial)    
+        - Loading data  
+        - Making plots (ggplot2)  
+        - Summarizing groups  
+        - Writing functions  
+        - Data types in R  
+  
+afternoon:  
+Heidi's parts: [Presentation](URPP_Tutorial_RBasicsII_HTL.pdf)  
+- Automating repetitive tasks (loops and apply functions)  
+- Plotting (R base graphics)  
+- Coding habits to avoid  
+
+
+------------------------------------------
+
+## Interesting Links
    
 **Cheatsheets**  
 -  [Basic R](https://www.rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf)  
@@ -54,4 +76,4 @@ URPP Evolution
 - [Link collection](https://www.rstudio.com/online-learning/#R)
 - Exploratory Data Analysis with R: [book](https://leanpub.com/exdata) and [videos](https://www.youtube.com/watch?v=6lOvA_y7p7w&list=PLjTlxb-wKvXPhZ7tQwlROtFjorSj9tUyZ)  
 - [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
- 
+
