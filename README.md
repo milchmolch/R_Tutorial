@@ -11,7 +11,7 @@ heidi.lischer@ieu.uzh.ch
 ## Introduction to R 
   
 
-morning:  
+morning (Stefan):  
 [http://swyder.github.io/R_Tutorial/](http://swyder.github.io/R_Tutorial)    
         - Loading data  
         - Making plots (ggplot2)  
@@ -19,8 +19,8 @@ morning:
         - Writing functions  
         - Data types in R  
   
-afternoon:  
-Heidi's parts: [Presentation](URPP_Tutorial_RBasicsII_HTL.pdf)  
+afternoon (Heidi):  
+[Presentation](URPP_Tutorial_RBasicsII_HTL.pdf)  
 - Automating repetitive tasks (loops and apply functions)  
 - Plotting (R base graphics)  
 - Coding habits to avoid  
@@ -76,4 +76,3 @@ Heidi's parts: [Presentation](URPP_Tutorial_RBasicsII_HTL.pdf)
 - [Link collection](https://www.rstudio.com/online-learning/#R)
 - Exploratory Data Analysis with R: [book](https://leanpub.com/exdata) and [videos](https://www.youtube.com/watch?v=6lOvA_y7p7w&list=PLjTlxb-wKvXPhZ7tQwlROtFjorSj9tUyZ)  
 - [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham
-
