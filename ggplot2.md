@@ -6,7 +6,7 @@
 
 ## Acknowledgements
 
-This material is based on [DataCarpentry ggplot2 material](https://github.com/datacarpentry/datacarpentry/tree/master/lessons/R/r-ggplot2) with many modifications. 
+This material is based on [DataCarpentry ggplot2 material](https://github.com/datacarpentry/datacarpentry/tree/master/lessons/R/r-ggplot2/ggplot2-example.md) with many modifications and shortenings. 
 
 
 ## Review
@@ -15,10 +15,11 @@ Remember an earlier lesson where we introduced basic plotting commands using bui
 
 
 ```r
-# Load some data and look at the first few lines
+ # Load some data and look at the first few lines
 data(iris)
 head(iris)
 ```
+
 
 ```
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -58,18 +59,23 @@ Then load it:
 library(ggplot2)
 ```
 
-### Plotting with ggplot2 using `qplot`
+### Plotting with ggplot2
 
-`ggplot2` is a widely used R package that extends R's visualization capabilities. It takes the hassle out of things like creating legends, mapping other variables to scales like color, or faceting plots into small multiples. We'll learn about what all these things mean shortly. To start with, let's produce the same plot as before, but this time using `ggplot2`'s `qplot` function. The `qplot` function is a quick and dirty convenience function to use **ggplot2**, and its syntax will be familiar if you're used to the base `plot` function. We'll cover advanced usage with the `ggplot` function later on.
+`ggplot2` is a widely used R package that extends R's visualization capabilities. It takes the hassle out of things like creating legends, mapping other variables to scales like color, or faceting plots into small multiples. We'll learn about what all these things mean shortly. To start with, let's produce a scatterplot of the columns Sepal.Length and Sepal.Width.  
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris)
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) + geom_point()
+ # or long format: ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) + geom_point()
 ```
 
-![plot of chunk qplot1](figure/qplot1-1.png) 
+![plot of chunk ggdiamonds](figure/ggdiamonds-1.png)
 
-The syntax is very similar to R's base graphics where you specify what's on the x and y axes, then give it the name of the data frame you want to use. We see again the strong relationship between petal length and sepal length of a flower. 
+The `ggplot` function has two required arguments: the *data* used for creating the plot, and an *aesthetic* mapping to describe how variables in said data are mapped to things we can see on the plot. Let's use `ggplot` to recreate some of the same plots we produced above. First, the simple scatterplot:
+
+We see the strong relationship between petal length and sepal length of a flower. 
+
+
 
 #### Faceting and scaling
 
@@ -77,7 +83,7 @@ One option we could use is to color-code the points by their species of origin. 
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris, col = Species)
+ggplot(iris, aes(Sepal.Length, Sepal.Width, col = Species)) + geom_point()
 ```
 
 ![plot of chunk clarcolor](figure/clarcolor-1.png) 
@@ -88,7 +94,7 @@ Differentiating points by shape is also easy:
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris, col = Species, shape = Species)
+ggplot(iris, aes(Sepal.Length, Sepal.Width, col = Species, shape = Species)) + geom_point()
 ```
 
 ![plot of chunk clarcolorshape](figure/clarcolorshape-1.png) 
@@ -96,17 +102,16 @@ qplot(Sepal.Length, Sepal.Width, data = iris, col = Species, shape = Species)
 Graphs are often easier to interpret after facetting. This can be accomplished easily using **ggplot2**:
 
 
-
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris, col = Species, facets = Species ~ .)
+ggplot(iris, aes(Sepal.Length, Sepal.Width, col = Species)) + geom_point() + facet_grid(Species ~ .)
 ```
 
 ![plot of chunk facetclar](figure/facetclar-1.png) 
 
-Here, the `facets` argument expects a formula object that's constructed with the `~` operator. Here, we've plotted the sepal length vs. petal length separately for each species.
+Here, we add another layer with `facet_grid` with a formula object that's constructed with the `~` operator. We've plotted the sepal length vs. petal length separately for each species.
 
 Let's assume the flowers have been collected at 5 different sites A-E coded in
-the variable field.  
+the variable field. 
 
 
 ```r
@@ -117,7 +122,7 @@ Now we can examine the sepal-petal length relationship for various fields. Here 
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris, col = field, facets = field ~ Species)
+ggplot(iris, aes(Sepal.Length, Sepal.Width, col = Species)) + geom_point() + facet_grid(field ~ Species)
 ```
 
 ![plot of chunk facetcol](figure/facetcol-1.png) 
@@ -137,16 +142,10 @@ Because **ggplot2** implements a *layered* grammar of graphics, data points and 
 
 To make the best use of **ggplot2** it helps to understand the grammar and how it affects how plots are produced. In addition, it is important to note that **ggplot2** is not a general-purpose plotting tool-kit; you may not be able to achieve certain plots or additions to a figure of they do not map onto concepts included in the layered grammar.
 
-In the examples above, we used **ggplot2**'s convenience function, `qplot`, because it's syntax should be familiar if you've already used base graphics. The `qplot` function did a lot of stuff for us: it created the plot object, added layers, plotted geoms, mapped features to aesthetics, created facets, and displayed the result. From here out, we'll use the `ggplot` function to build everything ourselves. 
 
-The `ggplot` function has two required arguments: the *data* used for creating the plot, and an *aesthetic* mapping to describe how variables in said data are mapped to things we can see on the plot. Let's use `ggplot` to recreate some of the same plots we produced above. First, the simple scatterplot:
 
 
 ```r
-# Using the qplot convenience function:
-# qplot(Sepal.Length, Sepal.Width, data = iris)
-
-# Using ggplot:
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) + geom_point()
 ```
 
@@ -188,13 +187,12 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width)) + geom_point() + geom_smooth(method
 
 ![plot of chunk smoothlinear](figure/smoothlinear-1.png) 
 
-Getting back to our examples above, using the `ggplot` syntax we can map the color of the points (an aesthetic) onto one of the variables in our dataset.
+#### Faceting and scaling
+
+One option we could use is to color-code the points by their species of origin. Here, we can map the color of the points (an aesthetic) onto one of the variables in our dataset.
 
 
 ```r
-# Using the qplot convenience function:
-# qplot(Sepal.Length, Sepal.Width, data = iris, col = Species
-# Using ggplot:
 ggplot(iris, aes(Sepal.Length, Sepal.Width, col=Species)) + geom_point()
 ```
 
@@ -217,13 +215,8 @@ scale_color_manual(values = c("red", "green", "blue"))
 ![plot of chunk ggclarcolbig](figure/ggclarcolbig-2.png) 
 
 
-We can also create a faceted plot as we did above using the `ggplot` function adding another layer with `facet_grid`.
-
 
 ```r
-# Using the qplot convenience function:  
-# qplot(Sepal.Length, Sepal.Width, data = iris, facets = field ~ Species)   
-# Using ggplot:
 ggplot(iris, aes(Sepal.Length, Sepal.Width, col=Species)) + geom_point() + facet_grid(field ~ Species)
 ```
 
@@ -271,3 +264,4 @@ There are endless ways to combine aesthetic mappings with different geoms and mu
 * <https://github.com/swcarpentry/bc/tree/master/intermediate/r/data-visualization>: Intermediate Software Carpentry lesson on data visualization with **ggplot2**.
 * <http://learnr.wordpress.com/>: A blog with a good number of posts describing how to reproduce various kind of plots using **ggplot2**.
 * <http://stackoverflow.com/questions/tagged/ggplot2>: Thousands of questions and answers tagged with "ggplot2" on Stack Overflow, a programming Q&A site.
+* We don't discuss here `ggplot2`'s `qplot` function. The `qplot` function is a quick and dirty convenience function to use **ggplot2**, and its syntax will be familiar if you're used to the base `plot` function. Learn more on [DataCarpentry](https://github.com/datacarpentry/datacarpentry/tree/master/lessons/R/r-ggplot2/ggplot2-example.md)
