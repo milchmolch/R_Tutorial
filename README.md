@@ -11,7 +11,7 @@ heidi.lischer@ieu.uzh.ch
 ## Introduction to R 
   
 
-morning (Stefan):  
+**morning** (Stefan):  
 [http://swyder.github.io/R_Tutorial/](http://swyder.github.io/R_Tutorial)    
         - Loading data  
         - Making plots (ggplot2)  
@@ -19,11 +19,11 @@ morning (Stefan):
         - Writing functions  
         - Data types in R  
   
-afternoon (Heidi):  
+**afternoon** (Heidi):  
 [Presentation](URPP_Tutorial_RBasicsII_HTL.pdf)  
-- Automating repetitive tasks (loops and apply functions)  
-- Plotting (R base graphics)  
-- Coding habits to avoid  
+        - Automating repetitive tasks (loops and apply functions)  
+        - Plotting (R base graphics)  
+        - Coding habits to avoid  
 
 
 ------------------------------------------
